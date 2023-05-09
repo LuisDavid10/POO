@@ -8,12 +8,12 @@ public class AppEdades {
 		Scanner sc = new Scanner (System.in);
 		do {
 			System.out.println("Ingrese edad");
-			int edad = sc.nextInt();
-			if(edad<0 || edad>120) {
-				throw new EdadException("Edad fuera de rango");
-			}
-		}while(true);
-
-	}
+            int edad = sc.nextInt();
+            if (edad < 0 || edad > 120) {
+                throw new EdadException("Edad fuera de rango");
+            }
+        } while (true);
+		
+    }
 
 }

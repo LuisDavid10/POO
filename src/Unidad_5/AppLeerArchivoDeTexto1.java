@@ -20,6 +20,7 @@ public class AppLeerArchivoDeTexto1 {
 			String linea = br.readLine();
 			if (cont ==0) {
 				String[] titulos = linea.split(",");//va a estar separando por la coma.   csv archivos de textos separados por comas 
+				System.out.println(titulos);
 			}else {
 				String[] datos = linea.split(",");
 				int clave = Integer.parseInt(datos[0]);

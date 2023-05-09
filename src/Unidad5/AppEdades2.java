@@ -15,6 +15,7 @@ public class AppEdades2 {
 			}else if (edad==50) {
 				throw new Exception("Edad 50 no valida");
 			}
+			sc.close();
 			break;
 			}catch(EdadException e) {
 				System.out.println(e.getMessage());
