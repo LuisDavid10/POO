@@ -24,7 +24,7 @@ public class AppListaDeProfesores {
 
 			String nombre = JOptionPane.showInputDialog("Dame el nombre del Profesor");
 			String curp = JOptionPane.showInputDialog("Curp de " + nombre);
-			long telefono = Long.parseLong(JOptionPane.showInputDialog("Telefono de " + nombre));
+			String telefono = JOptionPane.showInputDialog("Telefono de " + nombre);
 
 			int dia = Integer.parseInt(JOptionPane.showInputDialog("Día de nacimiento de " + nombre));
 			int mes = Integer.parseInt(JOptionPane.showInputDialog("Mes de nacimiento de " + nombre));

@@ -40,7 +40,7 @@ public class AppGPT {
 
 			String curp = txtCurp.getText();
 			String nombre = txtNombre.getText();
-			long telefono = Long.parseLong(txtTelefono.getText());
+			String telefono =txtTelefono.getText();
 			String clave = txtClave.getText();
 
 			int dia = Integer.parseInt(txtDiaNac.getText());
