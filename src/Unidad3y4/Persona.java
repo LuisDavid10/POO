@@ -5,10 +5,10 @@ import java.util.Objects;
 public class Persona {
 	protected String curp;
 	protected String nombre;
-	protected long telefono;
+	protected String telefono;
 	protected Fecha fnacimiento;
 
-	public Persona(String curp, String nombre, long telefono, Fecha fnacimiento) {
+	public Persona(String curp, String nombre, String telefono, Fecha fnacimiento) {
 		super();
 		this.curp = curp;
 		this.nombre = nombre;
@@ -32,11 +32,11 @@ public class Persona {
 		this.nombre = nombre;
 	}
 
-	public double getTelefono() {
+	public String getTelefono() {
 		return telefono;
 	}
 
-	public void setTelefono(long telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 

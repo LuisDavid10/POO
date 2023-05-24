@@ -1,19 +1,19 @@
 package Unidad_6;
 
 import java.io.BufferedReader;
+
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import Unidad3y4.Fecha;
 import Unidad_5.Articulo;
 
-import java,io.BufferedReader;
+import java.io.BufferedReader;
 
 public class AppProyecto {
 	public void crearArchivos() throws NumberFormatException, IOException {
 		//Abrir contenido del archivo
-	ArrayList<ProfesorPorHoras> profesoresPorHoras = new ArrayList<>();
-	ArrayList<ProfesorPorTiempo> profesoresPorTiempo = new ArrayList<>();
 	// Abrir archivo de texto para lectura
 	BufferedReader br = new BufferedReader ( new FileReader("Profesores.txt"));
 	//Procesar contenido del archivo
@@ -30,10 +30,12 @@ public class AppProyecto {
 	int año = Integer.parseInt(partesFecha[2]);
 	
 	Fecha fnacimiento = new Fecha(dia,mes,año);
-	
-	
 	String clave = datos[4];
-	double precio = Double.parseDouble(datos[1]);
+	
+	
+	
+		
+	
 	if(datos.length==3) {
 		
 		lista.add(new Articulo(clave,precio, datos[2]));

@@ -9,7 +9,7 @@ public class ProfesorTiempoCompleto extends Profesor {
 	private double pesos;
 	
 	
-	public ProfesorTiempoCompleto(String curp, String nombre, long telefono, Fecha fnacimiento, String clave) {
+	public ProfesorTiempoCompleto(String curp, String nombre, String telefono, Fecha fnacimiento, String clave) {
 	    super(curp, nombre, telefono, fnacimiento, clave);
 	    
 	    calcularSalario();

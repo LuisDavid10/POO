@@ -10,7 +10,7 @@ public class ProfesorPorHoras extends Profesor {
 
 	private double horas;
 
-	public ProfesorPorHoras(String curp, String nombre, long telefono, Fecha fechaNacimiento, String clave,double horas) {
+	public ProfesorPorHoras(String curp, String nombre, String telefono, Fecha fechaNacimiento, String clave,int horas) {
 		super(curp, nombre, telefono, fechaNacimiento, clave);
 		this.horas = horas;
 		calcularSalario();

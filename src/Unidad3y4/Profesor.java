@@ -10,7 +10,7 @@ public abstract class Profesor extends Persona {
 	protected String clave;
 	protected Double salario;
 
-	public Profesor(String curp, String nombre, long telefono, Fecha fnacimiento, String clave) {
+	public Profesor(String curp, String nombre, String telefono, Fecha fnacimiento, String clave) {
 		super(curp, nombre, telefono, fnacimiento);
 		this.clave = clave;
 		calcularSalario();
