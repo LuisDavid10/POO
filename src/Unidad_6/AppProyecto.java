@@ -41,6 +41,7 @@ o	Salir
 public class AppProyecto {
 	public void crearArchivos() throws NumberFormatException, IOException {
 		//Abrir contenido del archivo
+		ObjectoOutputStream archivoBinarioProfesores = new ObjectOutputStream(new FileOutputStream("Profesores.txt"));
 	// Abrir archivo de texto para lectura
 	BufferedReader br = new BufferedReader ( new FileReader("Profesores.txt"));
 	//Procesar contenido del archivo
