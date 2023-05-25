@@ -15,8 +15,7 @@ public class AppVolFiguras {
 			String[] opciones = { "Cubo", "Paralelepípedo", "Cilindro", "Esfera", "Salir" };
 			JComboBox<String> comboBox = new JComboBox<>(opciones);
 
-			JOptionPane.showMessageDialog(null, comboBox, "Que volumen quieres calcular???",
-					JOptionPane.QUESTION_MESSAGE);
+			JOptionPane.showMessageDialog(null, comboBox, "Que volumen quieres calcular???",JOptionPane.QUESTION_MESSAGE);
 
 			if (comboBox.getSelectedIndex() == 0) {
 				// Capturar datos para un ProfesorTiempoCompleto
