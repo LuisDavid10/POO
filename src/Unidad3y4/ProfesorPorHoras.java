@@ -1,12 +1,14 @@
 package Unidad3y4;
 //Es una subclase de Profesor que tiene el atributo horas,
 
+import java.io.Serializable;
+
 //cuyo salario se calcula multiplicando las primeras 40 horas trabajadas por 100 pesos
 //y las horas excedentes se multiplican por 135 pesos.
 
 import java.util.Objects;
 
-public class ProfesorPorHoras extends Profesor {
+public class ProfesorPorHoras extends Profesor implements Serializable {
 
 	private double horas;
 

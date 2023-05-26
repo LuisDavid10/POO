@@ -1,8 +1,9 @@
 package Unidad3y4;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Persona {
+public class Persona implements Serializable {
 	protected String curp;
 	protected String nombre;
 	protected String telefono;

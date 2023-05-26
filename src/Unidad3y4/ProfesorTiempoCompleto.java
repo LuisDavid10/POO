@@ -1,9 +1,10 @@
 package Unidad3y4;
 //Es una subclase de Profesor cuyo salario se calcula multiplicando 40 horas por una tarifa de 100 pesos la hora.
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class ProfesorTiempoCompleto extends Profesor {
+public class ProfesorTiempoCompleto extends Profesor implements Serializable {
 	
 	private double horas;
 	private double pesos;

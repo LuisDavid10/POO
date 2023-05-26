@@ -1,8 +1,9 @@
 package Unidad3y4;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Fecha {
+public class Fecha implements Serializable {
 	  private int dia;
 	    private int mes;
 	    private int año;
