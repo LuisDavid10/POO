@@ -10,7 +10,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
-import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
 import Unidad3y4.ProfesorPorHoras;
@@ -18,7 +17,7 @@ import Unidad3y4.ProfesorTiempoCompleto;
 import Unidad3y4.Fecha;
 import Unidad3y4.Persona;
 
-public class App2{
+public class App2 {
 	public static void crearObjetosDesdeArchivo() throws NumberFormatException, IOException {
 		// Abrir contenido del archivo
 		BufferedReader br = new BufferedReader(new FileReader("Profesores.txt"));
@@ -60,54 +59,74 @@ public class App2{
 				profesores.add(profesor);
 			}
 		} catch (EOFException e) {
+			e.getMessage();
 		} catch (ClassNotFoundException | IOException e) {
-			e.printStackTrace();
+			System.out.println("No se encontró y no se pudo crear el archivo");
 		}
 
 		return profesores;
 	}
-	public static void main(String[] args) throws NumberFormatException, IOException {
-		//Ejecutar menu desplagable
-		String [] menu ={"Crear archivo", "Leer archivo", "Listar todas las personas", "Listar el nombre y telefono con base a un salario", "listar la clave, el nombre y la curp por su cumpleaños","salir"};
-		JComboBox<String> comboBox = new JComboBox<>(menu);
-		
-//		ArrayList<Persona> profesores = leerArchivoBinario();
-//		for(Persona profesor : profesores ) {
-//			System.out.println(profesor);
-		
-		JOptionPane.showMessageDialog(null,comboBox, "Seleccione una opcion", JOptionPane.QUESTION_MESSAGE);
-		if (comboBox.getSelectedIndex() == 1){
-			//Crear archivo
-			//llamar al metodo 1
-			crearObjetosDesdeArchivo();
-			System.out.println("Profesores.dat");
 
-
-		}else if (comboBox.getSelectedIndex() == 2){
-			//leer archivo
-			//llama al metodo2
-			//ArrayList<Persona> profesores = leerArchivoBinario();
-		}else if(comboBox.getSelectedIndex() == 3){
-			//listar a todas las personas
-			
-			System.out.println("Si seleccionaste bien");
-			
-			ArrayList<Persona> profesores = leerArchivoBinario();
-			for(Persona profesor : profesores ) {
-				System.out.println(profesor);
+	public static void main(String[] args) throws NumberFormatException, IOException, ClassNotFoundException {
+		ArrayList<Persona> profesores=null;
+		int n = 0;
+		String menu = "¿Qué desea hacer?" + "\n1.Crear Archivo de Objetos" + "\n2.Leer Archivos de Objetos"
+				+ "\n3.Listar Personas" + "\n4.Ingresar Salario y mostrar las personas con salario menor a éste"
+				+ "\n5.Ingresar Mes y listar personar que cumplan años en ese mes" + "\n6.Salir";
+		while (n != 6) {
+			n = Integer.parseInt(JOptionPane.showInputDialog(null, menu, "Menú",
+					JOptionPane.PLAIN_MESSAGE));
+			switch (n) {
+			case 1:
+					crearObjetosDesdeArchivo();
+				break;
+			case 2:
+				profesores = leerArchivoBinario();
+				break;
+			case 3:
+				try {
+					String listaProfesores="Lista Completa de Profesores"+"\n";
+					for (Persona profesor : profesores) {
+						listaProfesores+=profesor.toString()+"\n----------------------\n";
+					}
+					SalidaScroll.imprimeScroll(listaProfesores);
+				}catch(NullPointerException e) {
+					System.out.println("Aún no se han leído el archivo de Objetos");
+				}
+				break;
+			case 4:
+				try {
+					String listaMenorSalario="";
+					double ingresarSalario= Double.parseDouble(JOptionPane.showInputDialog("Ingrese el Salario"));
+					listaMenorSalario="Lista de Profesores con salario menor a "+ingresarSalario+"\n"+"\n";
+					for (Persona profesor : profesores) {
+						if(profesor !=null && ((Profesor)profesor).getSalario()<ingresarSalario) {
+							listaMenorSalario+="Nombre: "+profesor.getNombre()+"\n"+"Teléfono: "+profesor.getTelefono()+"\n---------------------------------------------------\n";
+						}
+					}
+					SalidaScroll.imprimeScroll(listaMenorSalario);
+				}catch(NullPointerException e) {
+					System.out.println("Aún no se han leído el archivo de Objetos");
+				}
+				break;
+			case 5:
+				try {
+					String listaCumpleEnMes="";
+					int ingresarMes= Integer.parseInt(JOptionPane.showInputDialog("Ingrese el Mes"));
+					listaCumpleEnMes="Lista de personas que cumplen en el mes "+ingresarMes+"\n"+"\n";
+					for (Persona profesor : profesores) {
+						if(profesor !=null && (profesor.getFnacimiento().getMes()==ingresarMes)) {
+							listaCumpleEnMes+="Clave: "+((Profesor)profesor).getClave()+"\n"+"Nombre: "+profesor.getNombre()+"\n"+"Curp: "+profesor.getCurp()+"\n---------------------------------------------------\n";
+						}
+					}
+					SalidaScroll.imprimeScroll(listaCumpleEnMes);
+				}catch(NullPointerException e) {
+					System.out.println("Aún no se han leído el archivo de Objetos");
+				}
+				break;
+			case 6:
+				n = 6;
 			}
-			
-		}else if (comboBox.getSelectedIndex() == 4){
-			//Listar el nombre y telefono con base a un salario
-		}else if (comboBox.getSelectedIndex() == 5){
-			//listar la clave, el nombre y la curp por su cumpleaños
-		
-
-
-		}else if (comboBox.getSelectedIndex() == 6) {
-
-				
-			}
-	
-}
+		}
+	}
 }
