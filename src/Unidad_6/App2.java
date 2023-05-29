@@ -16,6 +16,7 @@ import Unidad3y4.ProfesorPorHoras;
 import Unidad3y4.ProfesorTiempoCompleto;
 import Unidad3y4.Fecha;
 import Unidad3y4.Persona;
+import Unidad3y4.Profesor;
 
 public class App2 {
 	public static void crearObjetosDesdeArchivo() throws NumberFormatException, IOException {
