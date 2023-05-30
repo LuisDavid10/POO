@@ -1,6 +1,5 @@
 package Unidad5;
 
-import java.io.Serializable;
 
 //public class EdadException extends Exception {
 //public EdadException() {
@@ -10,7 +9,7 @@ import java.io.Serializable;
 //	super(msg);
 //}
 //}
-public class EdadException extends Exception implements Serializable {
+public class EdadException extends Exception  {
     private static final long serialVersionUID = 1L;
     
     public EdadException() {

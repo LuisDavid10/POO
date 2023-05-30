@@ -34,7 +34,7 @@ public class App2 {
 			String[] partesFecha = datos[3].split("-");
 			int dia = Integer.parseInt(partesFecha[0]);
 			int mes = Integer.parseInt(partesFecha[1]);
-			int año = Integer.parseInt(partesFecha[2]);
+			int año =Integer.parseInt(partesFecha[2]);
 			Fecha fechaNacimiento = new Fecha(dia, mes, año);
 			String clave = datos[4];
 

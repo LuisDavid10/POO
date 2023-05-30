@@ -1,14 +1,13 @@
 package Unidad3y4;
 //Clase Profesor
 
-import java.io.Serializable;
 
 //Es una subclase de Persona que tiene una clave y un salario,
 //además de un método abstracto calcularSalario que no recibe parámetros.
 
 import java.util.Objects;
 
-public abstract class Profesor extends Persona implements Serializable  {
+public abstract class Profesor extends Persona {
 	protected String clave;
 	protected Double salario;
 

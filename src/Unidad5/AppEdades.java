@@ -13,7 +13,8 @@ public class AppEdades {
                 throw new EdadException("Edad fuera de rango");
             }
         } while (true);
-		
+        
+    	
     }
 
 }

@@ -18,7 +18,6 @@ import Unidad3y4.ProfesorPorHoras;
 import Unidad3y4.ProfesorTiempoCompleto;
 import java.io.ObjectOutputStream;
 import java.io.ObjectInputStream;
-import javax.swing.JOptionPane;
 
 /*
  * Crear una aplicación en java que tenga:

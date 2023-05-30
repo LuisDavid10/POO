@@ -37,6 +37,7 @@ public class ArchivoDeBajoNivel {
 			flujoEntrada.read(arregloDeBytes);
 			System.out.println(Arrays.toString(arregloDeBytes));
 			
+			flujoEntrada.close();
 		}catch(FileNotFoundException e ) {
 			System.out.println("No se pudo escribir el archivo");
 		}catch(IOException e) {
